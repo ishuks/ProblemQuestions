@@ -34,7 +34,7 @@ class HitCounterUnordered:
         '''
 
         if(upper < lower):
-            raise Exception("Upper should be less than or equal to Lower")
+            raise Exception("Lower should be less than or equal to Upper")
         total_in_range = 0 
         for key, value in self.hits.items(): 
             if(lower <= key <= upper): 
@@ -56,12 +56,12 @@ class HitCounterOrdered:
 
     def range(self, lower, upper): 
         if(upper < lower):
-            raise Exception("Upper should be less than or equal to Lower")
+            raise Exception("Lower should be less than or equal to Upper")
         total_hits_range = 0 
         for i in range(len(self.hits)): 
             if(lower<=self.hits[i]<=upper): 
                 total_hits_range += self.hits[i]
-            if(self.hits > upper): 
+            if(self.hits[i] > upper): 
                 break
         return total_hits_range 
         
